@@ -1,0 +1,56 @@
+ <div class = "content">
+  {% for blogdata in blogFeed %}
+    <div>  <img src= " {{blogdata['image']}}"/>  </div> 
+     <div> {{blogdata['author']}}
+       {{blogdata['title']}}
+       {{blogdata['date']|date("F jS \\a\\t g:ia")}}
+       Blog | {{blogdata['category']}} 
+       </div>
+
+    {% endfor %}
+
+    {% for data in mediaAnnouncement %}
+
+    {% if data.filename is not null %}
+     <div>   
+         <img src="{{ data.uri|e }}"/>
+     </div>
+     {% endif %}
+        <div><h4>{{ data.title|e}}</h4> </div>
+        <div><h4>{{ data.body|raw}}</h4> </div>
+        <div>{{ data.created|e}}</div>
+ 
+     {% endfor %}
+   
+
+    {% for data in brochure %}
+
+    {% if data.filename is not null %}
+     <div>   
+         <img src="{{ data.uri|e }}"/>
+     </div>
+     {% endif %}
+        <div><h4>{{ data.title|e}}</h4> </div>
+        <div><h4>{{ data.body|raw}}</h4> </div>
+        <div>{{ data.created|e}}</div>
+ 
+     {% endfor %}
+
+         {% for data in whitePaper %}
+
+    {% if data.filename is not null %}
+     <div>   
+         <img src="{{ data.uri|e }}"/>
+     </div>
+     {% endif %}
+        <div><h4>{{ data.title|e}}</h4> </div>
+        <div><h4>{{ data.body|raw}}</h4> </div>
+        <div>{{ data.created|e}}</div>
+ 
+     {% endfor %}
+
+
+</div>
+
+
+
